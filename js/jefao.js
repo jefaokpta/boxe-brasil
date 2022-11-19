@@ -11,9 +11,20 @@ const fighters = [
     { name: 'Saul Alvarez', age: 32, country: '🇬🇧', division: 'super medio', gender: 'M', img: 'saul.jpeg' },
 ]
 
-const fightersList = document.querySelector('#fightersList')
+function renderRandomFighter(){
+    const champion = document.querySelector('#champion')
+    const champ = fighters[randomIntFromInterval(0, 9)]
+    champion.innerHTML = `
+        <h4>${champ.name}</h4>
+        <img src="assets/imgs/figthers/${champ.img}" alt="">`
+}
+
+function randomIntFromInterval(min, max) { // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 function renderFighters() {
+    const fightersList = document.querySelector('#fightersList')
     fighters.forEach(fighter => {
         const li = document.createElement('li')
         li.innerHTML = `

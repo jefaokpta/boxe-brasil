@@ -234,8 +234,27 @@
                                 <div class="card-header text-center">
                                     <h6 class="m-0 font-weight-bold text-primary">Destaque</h6>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body text-center">
+                                    <div id="champion"></div>
+                                    <h4 style="padding-top: 8px">Ultimas Lutas</h4>
+                                    <ul style="list-style: none">
+                                        <li>
+                                            <h6><span class="badge badge-success">KO</span> Naoya Inoue</h6>
+                                            <p><small>Etihad Arena, Abu Dhabi, United Arab Emirates</small><br>
+                                            <small>Judges 117-111 | 117-111 | 118-110   Fans 118-110</small></p>
+                                        </li>
+                                        <li>
+                                            <h6><span class="badge badge-success">TKO</span> Lawrence Okolie</h6>
+                                            <p><small>Etihad Arena, Abu Dhabi, United Arab Emirates</small><br>
+                                                <small>Judges 117-111 | 117-111 | 118-110   Fans 118-110</small></p>
+                                        </li>
+                                        <li>
+                                            <h6><span class="badge badge-danger">DQ</span> Rey Vargas</h6>
+                                            <p><small>Etihad Arena, Abu Dhabi, United Arab Emirates</small><br>
+                                                <small>Judges 117-111 | 117-111 | 118-110   Fans 118-110</small></p>
+                                        </li>
 
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -311,7 +330,9 @@
     <script src="js/jefao.js"></script>
     <script>
         window.onload = function () {
+            renderRandomFighter()
             renderFighters()
+
         }
     </script>
 
