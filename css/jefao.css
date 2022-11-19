@@ -1,4 +1,4 @@
-.jefao-brand{
+.jefao-main-content {
     display: flex;
-    flex-direction: row;
+    padding-top: 8px;
 }
