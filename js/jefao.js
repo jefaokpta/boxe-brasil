@@ -16,10 +16,10 @@ function renderRandomFighter(){
     const champ = fighters[randomIntFromInterval(0, 9)]
     champion.innerHTML = `
         <h4>${champ.name}</h4>
-        <img src="assets/imgs/figthers/${champ.img}" alt="">`
+        <img src="assets/imgs/figthers/${champ.img}" alt="" class="rounded">`
 }
 
-function randomIntFromInterval(min, max) { // min and max included
+function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
@@ -33,7 +33,7 @@ function renderFighters() {
                     <img src="assets/imgs/figthers/${fighter.img}" alt="${fighter.name}" class="rounded" style="height: 75px">
                 </div>
                 <div style="padding-left: 8px">
-                    <h5>${fighter.country} ${fighter.name}</h5>
+                    <h6>${fighter.country} ${fighter.name}</h6>
                     <p><small class="text-muted">${fighter.division}</small></p>
                 </div>
             </div>`
