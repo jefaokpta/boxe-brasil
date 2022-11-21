@@ -19,15 +19,27 @@ function renderRandomFighter(){
         <img src="assets/imgs/figthers/${champ.img}" alt="" class="rounded">`
 }
 
+function renderFighter(index){
+    const champion = document.querySelector('#champion')
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
+    const champ = fighters[urlParams.get('fighter')]
+    // console.log(urlParams.get('fighter'))
+    champion.innerHTML = `
+        <h4>${champ.name}</h4>
+        <img src="assets/imgs/figthers/${champ.img}" alt="" class="rounded">`
+}
+
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 function renderFighters() {
     const fightersList = document.querySelector('#fightersList')
-    fighters.forEach(fighter => {
+    fighters.forEach((fighter, index) => {
         const li = document.createElement('li')
         li.innerHTML = `
+            <a href="champ.html?fighter=${index}">
             <div class="jefao-main-content">
                 <div>
                     <img src="assets/imgs/figthers/${fighter.img}" alt="${fighter.name}" class="rounded" style="height: 75px">
@@ -36,7 +48,8 @@ function renderFighters() {
                     <h6>${fighter.country} ${fighter.name}</h6>
                     <p><small class="text-muted">${fighter.division}</small></p>
                 </div>
-            </div>`
+            </div>
+            </a>`
         fightersList.appendChild(li)
     })
 }
